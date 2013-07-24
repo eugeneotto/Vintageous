@@ -1274,6 +1274,18 @@ class _vi_ctrl_u(sublime_plugin.TextCommand):
         self.view.run_command('scroll_lines', {'amount': scroll_amount})
 
 
+class _vi_ctrl_e(sublime_plugin.TextCommand):
+    def run(self, edit, mode=None, extend=False, count=None):
+
+        self.view.run_command('scroll_lines', {'amount': -1})
+
+
+class _vi_ctrl_y(sublime_plugin.TextCommand):
+    def run(self, edit, mode=None, extend=False, count=None):
+
+        self.view.run_command('scroll_lines', {'amount': 1})
+
+
 class _vi_g__(sublime_plugin.TextCommand):
     def run(self, edit, mode=None):
         def f(view, s):
